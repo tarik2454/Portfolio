@@ -20,8 +20,8 @@
    
    // общая стилизация кнопок
    border: 1px solid @grey;
-   border-radius: 30px;
-   padding: 1.1rem 1.8rem;
+   border-radius: 1.8em;
+   padding: 1.05em 1.7em;
    min-width: 170px;
    text-align: center;
 
@@ -39,5 +39,13 @@
 
    + .btn { // для следующей кнопки которая будет идти после кнопки расстояние слева будет 1rem
       margin-left: 1rem;
+   }
+
+   /* Modificators */
+   &--sm {
+      padding: 0.7em 1.1em;
+      font-size: 0.94rem;
+      font-weight: 700;
+      border-width: 2px;
    }
 }
