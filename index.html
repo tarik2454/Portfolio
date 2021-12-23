@@ -5,14 +5,16 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
+   <script src="https://kit.fontawesome.com/7852f64c69.js" crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,700&display=swap" rel="stylesheet">
 
    <link rel="stylesheet" href="css/style.css">
 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
    <title>Portfolio</title>
 </head>
-
-<body>
+<!-- <body class="no-scroll"> -->
 
    <!-- Header -->
    <header class="header">
@@ -91,17 +93,17 @@
          <div class="works__nav">
             <a class="works__nav-link" href="#">All</a>
             <a class="works__nav-link" href="#">CSS/Saas/Less</a>
-            <a class="works__nav-link" href="#">PHP</a>
-            <a class="works__nav-link" href="#">SQL</a>          
+            <a class="works__nav-link" href="#">PHP/SQL</a>
+            <a class="works__nav-link" href="#">Jquery</a>          
          </div>
 
          <div class="portfolio">
 
-            <div class="portfolio__col">
+            <div class="portfolio__col" data-cat="CSS/Saas/Less">
                <div class="work">
                   <img class="work__image" src="img/code.jpg" alt="">
                   <div class="work__content">
-                     <div class="work__cat">category</div>
+                     <div class="work__cat">category: CSS/Saas/Less</div>
                      <div class="work__title">
                         Project title
                         <time class="work__date" datetime="2021-11-24 18.00">2021</time>
@@ -110,11 +112,11 @@
                </div>
             </div>
                
-            <div class="portfolio__col">
+            <div class="portfolio__col" data-cat="PHP/SQL">
                <div class="work">
                   <img class="work__image" src="img/ava.jpg" alt="">
                   <div class="work__content">
-                     <div class="work__cat">category</div>
+                     <div class="work__cat">category: PHP/SQL</div>
                      <div class="work__title">
                         Project title
                         <time class="work__date" datetime="2021-11-24 18.00">2021</time>
@@ -123,11 +125,11 @@
                </div>
             </div>
 
-            <div class="portfolio__col">
+            <div class="portfolio__col" data-cat="Jquery">
                <div class="work">
                   <img class="work__image" src="img/code.jpg" alt="">
                   <div class="work__content">
-                     <div class="work__cat">category</div>
+                     <div class="work__cat">category: Jquery</div>
                      <div class="work__title">
                         Project title
                         <time class="work__date" datetime="2021-11-24 18.00">2021</time>
@@ -136,11 +138,11 @@
                </div>
             </div>
 
-            <div class="portfolio__col">
+            <div class="portfolio__col" data-cat="Jquery">
                <div class="work">
                   <img class="work__image" src="img/code.jpg" alt="">
                   <div class="work__content">
-                     <div class="work__cat">category</div>
+                     <div class="work__cat">category: Jquery</div>
                      <div class="work__title">
                         Project title
                         <time class="work__date" datetime="2021-11-24 18.00">2021</time>
@@ -149,11 +151,11 @@
                </div>
             </div>
 
-            <div class="portfolio__col">
+            <div class="portfolio__col" data-cat="PHP/SQL">
                <div class="work">
                   <img class="work__image" src="img/code.jpg" alt="">
                   <div class="work__content">
-                     <div class="work__cat">category</div>
+                     <div class="work__cat">category: PHP/SQL</div>
                      <div class="work__title">
                         Project title
                         <time class="work__date" datetime="2021-11-24 18.00">2021</time>
@@ -162,11 +164,11 @@
                </div>
             </div>
 
-            <div class="portfolio__col">
+            <div class="portfolio__col" data-cat="CSS/Saas/Less">
                <div class="work">
                   <img class="work__image" src="img/code.jpg" alt="">
                   <div class="work__content">
-                     <div class="work__cat">category</div>
+                     <div class="work__cat">category: CSS/Saas/Less</div>
                      <div class="work__title">
                         Project title
                         <time class="work__date" datetime="2021-11-24 18.00">2021</time>
@@ -264,6 +266,7 @@
                      </div>
                      <div class="articles__cat">CATEGORY</div>
                      <div class="articles__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
                      </div>
                   </div>
@@ -365,9 +368,225 @@
 
       </div>
    </div>
+
+   <!-- Modals -->
+   <div class="modal" style="display: none;">
+      <div class="modal__dialog">
+
+         <button class="modal__close" type="button">
+            <img src="img/modal-close.svg" alt="Close">
+         </button>
+
+         <div class="modal-work">
+            <div class="modal-work__preview">
+               <img class="modal-work__photo" src="img/code.jpg" alt=""> <!-- width="790" height="780"  -->
+            </div>
+            <div class="modal-work__content">
+
+               <div class="modal-work__header">
+                  <h3 class="modal-work__title">Project title</h3>
+                  <div class="modal-work__info">
+                     category <span class="modal-work__info-divider">|</span> 2021
+                  </div>
+               </div>
+
+               <div class="modal-work__client">
+                  <div class="modal-work__client-title">Client</div>
+                  <div class="modal-work__client-company">Creative Agency</div>
+               </div>
+
+               <div class="modal-work__text">
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut neque, officiis magnam perspiciatis, enim, recusandae atque veritatis dolorum natus nihil iste dolor incidunt quae quam voluptatum beatae non explicabo sequi!
+                  </p>
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut neque, officiis magnam perspiciatis, enim, recusandae atque veritatis dolorum natus nihil iste dolor incidunt quae quam voluptatum beatae non explicabo sequi!
+                  </p>
+               </div>
+
+               <div class="modal-work__footer">
+                  <button class="modal-work__btn" type="button" alt=""><i class="fas fa-arrow-left"></i>Previous</button>
+                  <button class="modal-work__btn" type="button"  alt="">Next<i class="fas fa-arrow-right"></i></button>
+               </div>  
+
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+   <div class="modal" style="display: none;">
+      <div class="modal__dialog">
+
+         <button class="modal__close" type="button">
+            <img src="img/modal-close.svg" alt="Close">
+         </button>
+         
+         <div class="modal__content">
+            <h3 class="modal__title text-center">RESUME</h3>
+
+            <div class="text-center">
+               <a href="#" class="btn btn--thin">DOWNLOAD PDF</a>
+               <a href="#" class="btn btn--thin">PRINT</a>
+            </div>
+
+            <div class="timeline">
+               <div class="timeline__col timeline__col--left">
+                  <h4 class="timeline__title">EXPERIENCE</h4>
+
+                  <div class="timeline__item">
+                     <time class="timeline__date" datetime="11-21-2019">2017 - <b>Present</b></time>
+                     <h5 class="timeline__subtitle">Freelancer</h5>
+                     <div class="timeline__position">Art Director</div>
+                     <div class="timeline__text">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati dolorum quo eveniet enim eligendi unde ducimus! Soluta fugiat tenetur nihil deleniti voluptate quos, magnam dolore repellat quaerat maiores vero sit.</p>
+                     </div>
+                  </div>
+
+                  <div class="timeline__item">
+                     <time class="timeline__date" datetime="11-21-2019">2017 - <b>Present</b></time>
+                     <h5 class="timeline__subtitle">Freelancer</h5>
+                     <div class="timeline__position">Art Director</div>
+                     <div class="timeline__text">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati dolorum quo eveniet enim eligendi unde ducimus! Soluta fugiat tenetur nihil deleniti voluptate quos, magnam dolore repellat quaerat maiores vero sit.</p>
+                     </div>
+                  </div>
+
+                  <div class="timeline__item">
+                     <time class="timeline__date" datetime="11-21-2019">2017 - <b>Present</b></time>
+                     <h5 class="timeline__subtitle">Freelancer</h5>
+                     <div class="timeline__position">Art Director</div>
+                     <div class="timeline__text">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati dolorum quo eveniet enim eligendi unde ducimus! Soluta fugiat tenetur nihil deleniti voluptate quos, magnam dolore repellat quaerat maiores vero sit.</p>
+                     </div>
+                  </div>
+
+               </div>
+
+               <div class="timeline__col timeline__col--right">
+                  <h4 class="timeline__title">EDUCATION</h4>
+               
+                  <div class="timeline__item">
+                     <time class="timeline__date" datetime="11-21-2019">2005 - 2010</time>
+                     <h5 class="timeline__subtitle">UI/UX Design</h5>
+                     <div class="timeline__position">LA University, USA</div>
+                  </div>
+
+                  <div class="timeline__item">
+                     <time class="timeline__date" datetime="11-21-2019">2005 - 2010</time>
+                     <h5 class="timeline__subtitle">UI/UX Design</h5>
+                     <div class="timeline__position">LA University, USA</div>
+                  </div>
+
+               <h4 class="timeline__title">Skills</h4>
+               <div class="progress-bar">
+
+                  <div class="progress-bar__item">
+                     <div class="progress-bar__left">
+                        <div class="progress-bar__title">UI/UX Design</div>
+                     </div>
+                     <div class="progress-bar__right">
+                        <div class="progress-bar__bar">
+                           <div class="progress-bar__progress" style="width: 20%"></div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="progress-bar__item">
+                     <div class="progress-bar__left">
+                        <div class="progress-bar__title">UI/UX Design</div>
+                     </div>
+                     <div class="progress-bar__right">
+                        <div class="progress-bar__bar">
+                           <div class="progress-bar__progress" style="width: 90%"></div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="progress-bar__item">
+                     <div class="progress-bar__left">
+                        <div class="progress-bar__title">UI/UX Design</div>
+                     </div>
+                     <div class="progress-bar__right">
+                        <div class="progress-bar__bar">
+                           <div class="progress-bar__progress" style="width: 50%"></div>
+                        </div>
+                     </div>
+                  </div> 
+
+               </div>
+
+                  <h4 class="timeline__title">Awards</h4>
+
+                  <div class="timeline__item">
+                     <time class="timeline__date" datetime="11-21-2019">2010</time>
+                     <h5 class="timeline__subtitle">UI/UX Design</h5>
+                     <div class="timeline__position">LA University, USA</div>
+                     <div class="timeline__text">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati dolorum quo eveniet enim eligendi unde ducimus! Soluta fugiat tenetur nihil deleniti voluptate quos, magnam dolore repellat quaerat maiores vero sit.</p>
+                     </div>
+                  </div>
+               
+               </div>              
+            </div>
+
+            <div class="text-center">
+               <a href="#" class="btn">Hire mi</a>
+            </div>
+
+         </div>
+
+      </div>
+   </div>
+
+   <div class="modal" style="display: none;">
+      <div class="modal__dialog modal__dialog--sm">
+
+         <button class="modal__close" type="button">
+            <img src="img/modal-close.svg" alt="Close">
+         </button>
+
+         <div class="contact">
+            <div class="contact__left">
+               <h3 class="modal__title mb-0">LET'S TALK</h3>
+               <h4 class="modal__subtitle">CALL ME OR SEND MI A REQUEST</h4>
+
+               <ul class="contact__info">
+                  <li class="contact__info-item"><img class="contact__info-icon" src="img/phone.svg" width="20px" alt="">
+                  (066)888-17-27</li>
+                  <li class="contact__info-item"><img class="contact__info-icon" src="img/mail.svg" width="" alt="">
+                  tarik2454@gmail.com</li>
+               </ul>
+
+               <form class="form" action="/" method="post">
+
+                  <div class="form__group">
+                     <label class="form__label" for="input-email">Adress email</label>
+                     <input class="form__input"  type="text" name="input-email" id="input-email" placeholder="Adress email">
+                  </div>
+
+                  <div class="form__group">
+                     <label class="form__label" for="input-text">REQUEST</label>
+                     <textarea class="form__textarea" name="input-text" id="input-text" placeholder="Type your request"></textarea>
+                  </div>
+                  
+                  <div class="text-right">
+                  <button class="btn" type="submit">SEND</button>
+                  </div>
+
+               </form>  
+            </div>
+
+            <div class="contact__right">
+               <img class="contact__right-photo" src="img/code.jpg" alt=""> <!-- 477*500 -->
+            </div>
+            
+         </div>
+         
+      </div>
+   </div>
   
-
-
+<!-- js -->
 
 
 
