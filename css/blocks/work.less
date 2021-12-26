@@ -1,6 +1,9 @@
 // main: ../style.less
 
 .work {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
    overflow: hidden;
    border-radius: 10px;
    box-shadow: 0 0 4px fade(#000, 25%);
@@ -9,17 +12,17 @@
 
    &:hover {
       box-shadow: 0 0 12px fade(#000, 25%);
-   }
+   } 
 
 }
 
 .work__image {
    display: block;
-   max-width: 100%;
+   width: 100%;
    height: auto;
 }
 
-.work__content {
+.work__content { 
    padding: 1rem 0.8rem;
 }
 
@@ -33,6 +36,7 @@
 .work__title {
    display: flex;
    justify-content: space-between;
+   flex: 0 0 100%;
    font-size: 1.06rem;
    color: @black;
    text-transform: uppercase;

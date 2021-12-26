@@ -91,17 +91,19 @@
       <div class="container">
 
          <div class="works__nav">
-            <a class="works__nav-link" href="#">All</a>
-            <a class="works__nav-link" href="#">CSS/Saas/Less</a>
-            <a class="works__nav-link" href="#">PHP/SQL</a>
-            <a class="works__nav-link" href="#">Jquery</a>          
+            <a class="works__nav-link" href="#" data-filter="All">All</a>
+            <a class="works__nav-link" href="#" data-filter="CSS/Saas/Less">CSS/Saas/Less</a>
+            <a class="works__nav-link" href="#" data-filter="PHP/SQL">PHP/SQL</a>
+            <a class="works__nav-link" href="#" data-filter="Jquery">Jquery</a>          
          </div>
 
          <div class="portfolio">
 
             <div class="portfolio__col" data-cat="CSS/Saas/Less">
                <div class="work">
-                  <img class="work__image" src="img/code.jpg" alt="">
+                  <div class="work__image-wrapper">
+                     <img class="work__image" src="img/code.jpg" alt="">
+                  </div>
                   <div class="work__content">
                      <div class="work__cat">category: CSS/Saas/Less</div>
                      <div class="work__title">
@@ -114,7 +116,9 @@
                
             <div class="portfolio__col" data-cat="PHP/SQL">
                <div class="work">
-                  <img class="work__image" src="img/ava.jpg" alt="">
+                  <div class="work__image-wrapper">
+                     <img class="work__image" src="img/320_240.jpg" alt="">
+                  </div>
                   <div class="work__content">
                      <div class="work__cat">category: PHP/SQL</div>
                      <div class="work__title">
@@ -127,7 +131,9 @@
 
             <div class="portfolio__col" data-cat="Jquery">
                <div class="work">
-                  <img class="work__image" src="img/code.jpg" alt="">
+                  <div class="work__image-wrapper">
+                     <img class="work__image" src="img/640_480.jpg" alt="">
+                  </div>
                   <div class="work__content">
                      <div class="work__cat">category: Jquery</div>
                      <div class="work__title">
@@ -587,6 +593,7 @@
    </div>
   
 <!-- js -->
+<script src="js/app.js"></script>
 
 
 
