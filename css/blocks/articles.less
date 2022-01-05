@@ -13,10 +13,19 @@
 .articles__col {
    flex: 0 0 33.33333%;
    padding: 0 1rem;
+
+   @media @mobile {
+      flex: 0 0 100%;
+   }
 }
 
 .articles__item {
    margin-bottom: 2rem;
+
+   @media @mobile {
+      max-width: 370px;
+      margin: 0 auto 2rem;
+   }
 }
 
 .articles__header {
