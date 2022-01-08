@@ -1,9 +1,5 @@
 // main: ../style.less
 
-.news {
-   margin-bottom: 5rem;
-}
-
 .articles {
    display: flex;
    flex-wrap: wrap;
@@ -12,6 +8,7 @@
 
 .articles__col {
    flex: 0 0 33.33333%;
+   margin-bottom: 2rem;
    padding: 0 1rem;
 
    @media @mobile {
@@ -20,7 +17,10 @@
 }
 
 .articles__item {
-   margin-bottom: 2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 100%;
 
    @media @mobile {
       max-width: 370px;
@@ -31,10 +31,6 @@
 .articles__header {
    position: relative;
    margin-bottom: 1.3rem;
-}
-
-.articles__content {
-   margin-bottom: 2rem;
 }
 
 .articles__date {
@@ -86,6 +82,9 @@
 }
 
 .articles__text {
+   overflow: hidden;
+   height: 7rem;
+   margin-bottom: 1.5rem;
    font-size: 0.8rem;
    color: @grey;
    font-weight: 300;
