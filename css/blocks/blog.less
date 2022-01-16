@@ -1,0 +1,56 @@
+// main: ../style.less
+
+.blog {
+   @media @mobile {
+      margin-top: 100px;
+   }
+}
+
+.blog__inner {
+   padding-top: 3.6rem;
+   padding-bottom: 8rem;
+
+   @media @tablet {
+      padding-top: 3rem;
+      padding-bottom: 5rem;
+   }
+
+   @media @mobile {
+      padding-top: 1.3rem;
+      padding-bottom: 3rem;
+   }
+}
+
+.blog__title {
+   margin-bottom: 3.6rem;
+   font-size: 3rem;
+   font-weight: 600;
+
+   @media @mobile {
+      margin-bottom: 2rem;
+   }
+
+   @media @mobile-sm {
+      font-size: 2rem;
+   }
+}
+
+.blog__image {
+   float: left;
+   margin: 0 1.3rem 0.6rem 0;
+   width: 40%;
+}
+
+.blog__foto {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+.blog__text {
+   margin-bottom: 2.8rem;
+   font-size: .8rem;
+   line-height: 2;
+   color: @grey;
+   font-weight: 300;
+}

@@ -33,6 +33,11 @@
    text-transform: uppercase;
    font-weight: 700;
    text-decoration: none;
+
+   &:last-child {
+      margin-top: 0.2rem;
+   }
+
    
    &:after {
       content: "";
@@ -50,6 +55,10 @@
       &:after {
          width: 100%;
       }
+   }
+
+   @media @tablet {
+      margin-left: 1rem;
    }
 
    /* Modificators */

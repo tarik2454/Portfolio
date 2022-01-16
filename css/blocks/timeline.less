@@ -26,10 +26,26 @@
    &--left {
       text-align: right;
       padding-right: 3.2rem;
+
+      @media @mobile {
+         padding-right: 2rem;
+      }
+
+      @media @mobile-sm {
+         padding-right: 1rem;
+      }
    }
 
    &--right {
       padding-left: 3.2rem;
+
+      @media @mobile {
+         padding-left: 2rem;
+      }
+
+      @media @mobile-sm {
+         padding-left: 1rem;
+      }
    }
 }
 
