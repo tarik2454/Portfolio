@@ -6,7 +6,8 @@ Project Link: [https://tarik2454.github.io/responsive-website-Portfolio/](https:
 
 * HTML
 * CSS
-* JS(jQuery)
+* Less
+* jQuery
 
 ## Contact:
 
