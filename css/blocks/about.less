@@ -6,6 +6,10 @@
    @media @tablet {
       margin: 4rem 0;
   }
+
+  @media @tablet {
+   margin: 3.6rem 0;
+}
 }
 
 .about__inner {
@@ -27,6 +31,7 @@
    position: relative;
 
    img {
+      height: 105%;
       position: absolute;
       bottom: 0;
       z-index: 2;
@@ -75,46 +80,50 @@
       margin-left: auto;
       margin-right: auto;
    }
+
+   
+   @media @mobile-sm {
+      margin-top: 0;
+   }
 }
 
 .about__title {
-   font-size: 3rem;
-   color: @black;
-   font-weight: 700;
-   text-transform: uppercase;
+    font-size: 3rem;
+    color: @black;
+    font-weight: 700;
+    text-transform: uppercase;
 
-   @media @notebook {
-      font-size: 2.5rem;
-   }
+    @media @notebook {
+        font-size: 2.5rem;
+    }
 
-   @media @mobile {
-      font-size: 2rem;
-   }
+    @media @mobile {
+        font-size: 2rem;
+    }
 }
 
-.about__big-title {
-   margin-bottom: 1.4rem;
+.about__bigtitle {
+    margin-bottom: 1.4rem;
+    position: relative;
+    left: -10px;
 
-   position: relative;
-   left: -10px;
+    font-size: 6.1rem;
+    line-height: 1.1;
+    color: fade(@black, 15%);
+    font-weight: 700;
+    text-transform: uppercase;
 
-   font-size: 6.1rem;
-   line-height: 1.1;
-   color: fade(@black, 15%);
-   font-weight: 700;
-   text-transform: uppercase;
+    @media @notebook {
+        font-size: 4rem;
+    }
 
-   @media @notebook {
-      font-size: 4rem;
-   }
+    @media @tablet {
+        position: static;
+    }
 
-   @media @tablet {
-      position: static;
-   }
-
-   @media @mobile {
-      font-size: 3rem;
-   }
+    @media @mobile {
+        font-size: 3rem;
+    }
 }
 
 .about__text {

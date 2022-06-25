@@ -4,10 +4,12 @@
    display: flex;
    justify-content: space-between;
    flex-direction: column;
+   height: 100%;
    overflow: hidden;
    border-radius: 10px;
    box-shadow: 0 0 4px fade(#000, 25%);
-   height: 100%;
+   cursor: pointer;
+
    transition: box-shadow 0.2s linear;
 
    &:hover {
@@ -23,6 +25,7 @@
    display: block;
    width: 100%;
    height: auto;
+   object-fit: cover;
 }
 
 .work__content { 

@@ -3,13 +3,17 @@
 .header {
    padding: 0.7rem 0;
    background-color: #fff;
-   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 
-   position: fixed;
+   position: absolute;
    top: 0;
    left: 0;
    right: 0;
    z-index: 1000;
+}
+
+.header.fixed {
+    position: fixed;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .header__inner {

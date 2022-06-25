@@ -7,17 +7,19 @@
    height: 100%;
 
    @media @mobile {
+      display: none;
       width: 100%;
       height: auto;
       padding: 1rem;
+   
+      background-color: #fff;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      
       position: absolute;
       top: 100%;
       right: 0;
       z-index: 1000;
-      background-color: #fff;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      display: none;
    }
 
       &.show {
@@ -38,7 +40,6 @@
       margin-top: 0.2rem;
    }
 
-   
    &:after {
       content: "";
       width: 0;

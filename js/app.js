@@ -1,125 +1,152 @@
 $(function() {
 
-   // Filter
-   let filter = $("[data-filter");
+    const header = $("#header");
+    let headerH = header.innerHeight();
+
+    
+    // -- fixed header 
+    $(window).on("scroll resize", function() {
+        if( window.pageYOffset > headerH ) {
+            header.addClass("fixed");
+        } else {
+            header.removeClass("fixed");
+        }
+    });
+
+
+    // -- scroll element
+    $("[data-scroll]").on("click", function(event) {
+        event.preventDefault();
+ 
+        let elementId = $(this).data('scroll');
+        let elementOffset = $(elementId).offset().top;
+ 
+        nav.removeClass("show");
+ 
+        $("html, body").animate({
+            scrollTop: elementOffset - 115
+        }, 600);
+    });
+
+   
+   // -- filter
+   const filter = $("[data-filter]");
 
    filter.on("click", function(event) {
-      event.preventDefault();
+       event.preventDefault();
 
-      let cat = $(this).data("filter");
+       let cat = $(this).data('filter');
 
-      if(cat == "All") {
-         $("[data-cat]").removeClass("hide");
-      } else {
-         $("[data-cat]").each(function() {
+       if(cat == 'All') {
+           $("[data-cat]").removeClass("hide");
+       } else {
+           $("[data-cat]").each(function() {
+               let workCat = $(this).data('cat');
 
-            let workCat = $(this).data("cat");
-   
-            if(workCat != cat) {
-               $(this).addClass("hide");
-            } else {
-               $(this).removeClass("hide");
-         }
-
-      });
-
-      }
-
+               if(workCat != cat) {
+                   $(this).addClass('hide');
+               } else {
+                   $(this).removeClass('hide');
+               }
+           });
+       }
    });
 
-   // Modal
+
+   // -- modal-window
    const modalCall = $("[data-modal]");
    const modalClose = $("[data-close]");
 
    modalCall.on("click", function(event) {
-      event.preventDefault();
+       event.preventDefault();
 
-      let $this = $(this);
-      let modalId = $this.data("modal");
+       let $this = $(this);
+       let modalId = $this.data('modal');
 
-      $(modalId).addClass("show");
-      $("body").addClass("no-scroll");
+       $(modalId).addClass('show');
+       $("body").addClass('no-scroll');
 
-      setTimeout(function() {
-         $(modalId).find(".modal__dialog").css({transform: "scale(1)"});
-      }, 200);
+       setTimeout(function() {
+           $(modalId).find(".modal__dialog").css({
+               transform: "scale(1)"
+           });
+       }, 200);
 
-      $("#worksSlider").slick("setPosition");
-
+       worksSlider.slick('setPosition');
    });
 
    modalClose.on("click", function(event) {
-      event.preventDefault();
+       event.preventDefault();
 
-      let $this = $(this);
-      let modalParent = $this.parents(".modal");
+       let $this = $(this);
+       let modalParent = $this.parents('.modal');
+       modalParent.find(".modal__dialog").css({
+           transform: "scale(0)"
+       });
 
-         modalParent.find(".modal__dialog").css({transform: "scale(0)"
-      });
-
-      setTimeout(function() {
-         modalParent.removeClass("show");
-         $("body").removeClass("no-scroll");
-      }, 200);
-
+       setTimeout(function() {
+           modalParent.removeClass('show');
+           $("body").removeClass('no-scroll');
+       }, 200);
    });
 
    $(".modal").on("click", function(event) {
-      let $this = $(this);
+       let $this = $(this);
 
-      $this.find(".modal__dialog").css({transform: "scale(0)"
-      });
-
-      setTimeout(function() {
-         $this.removeClass("show");
-         $("body").removeClass("no-scroll");
-      }, 200);
-
+       $this.find(".modal__dialog").css({
+           transform: "scale(0)"
+       });
+       setTimeout(function() {
+           $this.removeClass('show');
+           $("body").removeClass('no-scroll');
+       }, 200);
    });
 
    $(".modal__dialog").on("click", function(event) {
-      event.stopPropagation();
-
+       event.stopPropagation();
    });
 
-   // Slider: https://kenwheeler.github.io/slick/
-   $('[data-slider="slick"]').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      fade: true,
-      arrows: false,
-      dots: true,
-    });
 
-    $(".slickPrev").on("click", function(event) {
-      event.preventDefault();
+   /* Slider: https://kenwheeler.github.io/slick/
+   ====================*/
+   const worksSlider = $('[data-slider="slick"]');
 
-      let currentSlider = 
-      $(this).parents('.modal').find('[data-slider="slick"]');
-
-      currentSlider.slick("slickPrev");
-    });
-    
-    $(".slickNext").on("click", function(event) {
-      event.preventDefault();
-
-      let currentSlider = 
-      $(this).parents('.modal').find('[data-slider="slick"]');
-
-      currentSlider.slick("slickNext");
+   worksSlider.slick({
+       infinite: true,
+       slidesToShow: 1,
+       slidesToScroll: 1,
+       fade: true,
+       arrows: false,
+       dots: true
    });
 
-   // Mobile nav
+   $(".slickPrev").on("click", function(event) {
+       event.preventDefault();
+
+       let currentSlider = $(this).parents('.modal').find('[data-slider="slick"]');
+
+       currentSlider.slick("slickPrev");
+   });
+
+   $(".slickNext").on("click", function(event) {
+       event.preventDefault();
+
+       let currentSlider = $(this).parents('.modal').find('[data-slider="slick"]');
+
+       currentSlider.slick("slickNext");
+   });
+
+
+   /* Mobile nav
+   ====================*/
    const navToggle = $("#navToggle");
    const nav = $("#nav");
 
    navToggle.on("click", function(event) {
-      event.preventDefault();
+       event.preventDefault();
 
-      nav.toggleClass("show");
+       nav.toggleClass("show");
    });
-
 
 
 });
