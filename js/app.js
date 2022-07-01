@@ -1,19 +1,6 @@
 $(function() {
 
-    const header = $("#header");
-    let headerH = header.innerHeight();
-
     
-    // -- fixed header 
-    $(window).on("scroll resize", function() {
-        if( window.pageYOffset > headerH ) {
-            header.addClass("fixed");
-        } else {
-            header.removeClass("fixed");
-        }
-    });
-
-
     // -- scroll element
     $("[data-scroll]").on("click", function(event) {
         event.preventDefault();
