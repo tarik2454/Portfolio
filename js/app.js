@@ -1,6 +1,19 @@
 $(function() {
 
-    
+
+    // -- fixed header 
+    const header = $("#header");
+    let headerH = header.innerHeight();
+
+    $(window).on("scroll resize", function() {
+        if( window.pageYOffset > headerH ) {
+            header.addClass("fixed");
+        } else {
+            header.removeClass("fixed");
+        }
+    });
+
+
     // -- scroll element
     $("[data-scroll]").on("click", function(event) {
         event.preventDefault();
@@ -8,12 +21,25 @@ $(function() {
         let elementId = $(this).data('scroll');
         let elementOffset = $(elementId).offset().top;
  
-        nav.removeClass("show");
+        setTimeout(function() {
+           nav.removeClass("show");
+        }, 100);
  
         $("html, body").animate({
             scrollTop: elementOffset - 115
         }, 600);
     });
+
+
+   // -- Mobile nav
+   const navToggle = $("#navToggle");
+   const nav = $("#nav");
+
+   navToggle.on("click", function(event) {
+       event.preventDefault();
+
+       nav.toggleClass("show");
+   });
 
    
    // -- filter
@@ -94,8 +120,7 @@ $(function() {
    });
 
 
-   /* Slider: https://kenwheeler.github.io/slick/
-   ====================*/
+   // -- Slider: https://kenwheeler.github.io/slick/
    const worksSlider = $('[data-slider="slick"]');
 
    worksSlider.slick({
@@ -123,17 +148,5 @@ $(function() {
        currentSlider.slick("slickNext");
    });
 
-
-   /* Mobile nav
-   ====================*/
-   const navToggle = $("#navToggle");
-   const nav = $("#nav");
-
-   navToggle.on("click", function(event) {
-       event.preventDefault();
-
-       nav.toggleClass("show");
-   });
-
-
+   
 });
