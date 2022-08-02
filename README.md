@@ -5,7 +5,6 @@ Project Link: [https://tarik2454.github.io/responsive-website-Portfolio/](https:
 ## Technologies used:
 
 * HTML
-* CSS
 * Less
 * jQuery
 
